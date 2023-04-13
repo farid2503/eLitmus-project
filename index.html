@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lost Treasure Hunt</title>
+</head>
+<body>
+    <h1>Lost Treasure Hunt</h1>
+    {% if "user_id" in session %}
+        <p>Welcome back!</p>
+        <p><a href="{{ url_for('progress', progress=user.progress) }}">Resume your progress</a></p>
+        <p><a href="{{ url_for('logout') }}">Log out</a></p>
+    {% else %}
+        <p><a href="{{ url_for('register') }}">Register</a></p>
+        <p><a href="{{ url_for('login') }}">Log in</a></p>
+    {% endif %}
+</body>
+</html>
